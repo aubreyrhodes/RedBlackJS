@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <script type="text/javascript" src="RedBlack.js"></script>
+        <link rel="stylesheet" type="text/css" href="qunit/qunit.css"/>
+        <script type="text/javascript" src="qunit/qunit.js"></script>
+        <script type="text/javascript">
+            test("Test first insert", function(){
+                var tree = new RedBlackTree();
+                var result = tree.tryInsert(3);
+                ok(result, "Inserted Head OK");
+            });
+            test("Test insert multiple values", function(){
+               var tree = new RedBlackTree();
+               var result = true;
+               for(var i=0; i<1000; i++){
+                    result &= tree.tryInsert(i+'');
+               }
+               ok(result, "Values inserted OK");
+            });
+            test("Inserting the same value multiple times", function(){
+               var tree = new RedBlackTree();
+               var result = true;
+               for(var i=0; i<1000; i++){
+                    result &= tree.tryInsert(i+'');
+               }
+               ok(result, "First values inserted ok");
+               var newResult = tree.tryInsert(500+'');
+               ok(!newResult, "Found duplicate value");
+            });
+        </script>
+    </head>
+    <body>
+        <h1 id="qunit-header">RedBlack Tests</h1>
+	<h2 id="qunit-banner"></h2>
+	<div id="qunit-testrunner-toolbar"></div>
+	<h2 id="qunit-userAgent"></h2>
+	<ol id="qunit-tests"></ol>
+    </body>
+</html>
