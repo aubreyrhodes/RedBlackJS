@@ -1,6 +1,6 @@
 RedBlackJS
 
-Self balancing search tree.  This is designed to quickly check if an element has been added to the tree, and it it's not found the element is automatically added to the list.
+Self balancing search tree.  This is designed to quickly check if an element has been added to the tree, and if it's not found the element is automatically added to the list.
 
 Does not currently support deleting elements or searching without inserting.
 
